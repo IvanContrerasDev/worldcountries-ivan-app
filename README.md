@@ -54,18 +54,17 @@ DB_HOST=localhost
 
 Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
 
-Adicionalmente será necesario que creen desde psql una base de datos llamada `pokemon`
+Adicionalmente será necesario que creen desde psql una base de datos llamada `countries`
 
 El contenido de `client` fue creado usando: Create React App.
 
 ## Enunciado
 
-La idea general es crear una aplicación en la cual se puedan ver los distintos Pokemon utilizando la api externa [pokeapi](https://pokeapi.co/) y a partir de ella poder, entre otras cosas:
+La idea general es crear una aplicación en la cual se puedan ver información de  distintos paises utilizando la api externa [restcountries](https://restcountries.eu/) y a partir de ella poder, entre otras cosas:
 
-  - Buscar pokemons
+  - Buscar paises
   - Filtrarlos / Ordenarlos
-  - Crear o editar pokemons
-  - Crear o editar tipos de pokemon
+  - Crear actividades turísticas
 
 ### Requerimientos mínimos:
 
@@ -88,44 +87,53 @@ __Pagina inicial__: deben armar una landing page con
 - [ ] Botón para ingresar al home (`Ruta principal`)
 
 __Ruta principal__: debe contener
-- [ ] Input de búsqueda para encontrar pokemons por nombre (La búsqueda será exacta, es decir solo encontrará al pokemon si se coloca el nombre completo)
-- [ ] Área donde se verá el listado de pokemons. Al iniciar deberá cargar los primeros resultados obtenidos desde la ruta `GET /pokemons` y deberá mostrar su:
-  - Imagen
+- [ ] Input de búsqueda para encontrar países por nombre
+- [ ] Área donde se verá el listado de países. Al iniciar deberá cargar los primeros resultados obtenidos desde la ruta `GET /countries` y deberá mostrar su:
+  - Imagen de la bandera
   - Nombre
-  - Tipos (Electrico, Fuego, Agua, etc)
-- [ ] Botones/Opciones para filtrar por tipo de pokemon y por pokemon existente o creado por nosotros
-- [ ] Botones/Opciones para ordenar los pokemons
-- [ ] Paginado para ir buscando y mostrando los siguientes pokemons
+  - Continente
+- [ ] Botones/Opciones para filtrar por continente y por tipo de actividad turística
+- [ ] Botones/Opciones para ordenar los paises
+- [ ] Paginado para ir buscando y mostrando los siguientes paises
 
-__Ruta de detalle de Pokemon__: debe contener
-- [ ] Los campos mostrados en la ruta principal para cada pokemon (imagen, nombre y tipos)
-- [ ] Número de Pokemon (id)
-- [ ] Estadísticas (vida, fuerza, defensa, velocidad)
-- [ ] Altura y peso
+__Ruta de detalle de país__: debe contener
+- [ ] Los campos mostrados en la ruta principal para cada país (imagen de la bandera, nombre, código de país de 3 letras y continente)
+- [ ] Código de país de 3 letras (id)
+- [ ] Capital
+- [ ] Subregión
+- [ ] Área (Mostrarla en km2 o millones de km2)
+- [ ] Población
 
-__Ruta de creación__: debe contener
-- [ ] Un formulario __controlado__ con los campos mencionados en el detalle del pokemon
-- [ ] Posibilidad de seleccionar/agregar más de un tipo de pokemon
-- [ ] Botón/Opción para crear un nuevo pokemon
+__Ruta de creación de actividad turística__: debe contener
+- [ ] Un formulario __controlado__ con los siguientes campos
+  - Nombre
+  - Dificultad
+  - Duración
+  - Temporada
+- [ ] Posibilidad de seleccionar/agregar varios países
+- [ ] Botón/Opción para crear una nueva actividad turística
 
 #### Base de datos
 
 El modelo de la base de datos deberá tener las siguientes entidades (Aquellas propiedades marcadas con asterísco deben ser obligatorias):
 
-- [ ] Pokemon con las siguientes propiedades:
-  - ID (Número de Pokemon) * : No puede ser un ID de un pokemon ya existente en la API pokeapi
+- [ ] País con las siguientes propiedades:
+  - ID (Código de 3 letras) *
   - Nombre *
-  - Vida
-  - Fuerza
-  - Defensa
-  - Velocidad
-  - Altura
-  - Peso
-- [ ] Tipo con las siguientes propiedades:
+  - Imagen de la bandera *
+  - Continente *
+  - Capital *
+  - Subregión
+  - Área
+  - Población
+- [ ] Actividad Turística con las siguientes propiedades:
   - ID
   - Nombre
+  - Dificultad (Entre 1 y 5)
+  - Duración
+  - Temporada (Verano, Otoño, Invierno o Primavera)
 
-La relación entre ambas entidades debe ser de muchos a muchos ya que un pokemon puede pertenecer a más de un tipo y, a su vez, un tipo puede incluir a muchos pokemons.
+La relación entre ambas entidades debe ser de muchos a muchos ya que un país puede contener varias actividades turísticas y, a su vez, una actividad turística puede darse en múltiples países. Por ejemplo una actividad podría ser "Ski" que podría ocurrir en Argentina y también en Estados Unidos, pero a su vez Argentina podría también incluir "Rafting".
 
 #### Backend
 
