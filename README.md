@@ -103,6 +103,7 @@ __Ruta de detalle de país__: debe contener
 - [ ] Subregión
 - [ ] Área (Mostrarla en km2 o millones de km2)
 - [ ] Población
+- [ ] Actividades turísticas con toda su información asociada
 
 __Ruta de creación de actividad turística__: debe contener
 - [ ] Un formulario __controlado__ con los siguientes campos
@@ -139,22 +140,19 @@ La relación entre ambas entidades debe ser de muchos a muchos ya que un país p
 
 Se debe desarrollar un servidor en Node/Express con las siguientes rutas:
 
-- [ ] __GET /pokemons__:
-  - Obtener un listado de los primeros 12 pokemons desde pokeapi
-  - Debe devolver solo los datos necesarios para la ruta principal
-- [ ] __GET /pokemons/{idPokemon}__:
-  - Obtener el detalle de un pokemon en particular
-  - Debe traer solo los datos pedidos en la ruta de detalle de pokemon
-  - Tener en cuenta que tiene que funcionar tanto para un id de un pokemon existente en pokeapi o uno creado por ustedes
-- [ ] __GET /pokemons?name="..."__:
-  - Obtener el pokemon que coincida exactamente con el nombre pasado como query parameter (Puede ser de pokeapi o creado por nosotros)
-  - Si no existe ningún pokemon mostrar un mensaje adecuado
-- [ ] __POST /pokemons__:
-  - Recibe los datos recolectados desde el formulario controlado de la ruta de creación de pokemons por body
-  - Crea un pokemon en la base de datos
-- [ ] __GET /types__:
-  - Obtener todos los tipos de pokemons posibles
-  - En una primera instancia deberán traerlos desde pokeapi y guardarlos en su propia base de datos y luego ya utilizarlos desde allí
+- [ ] __GET /countries__:
+  - En una primera instancia deberán traer todos los países desde restcountries y guardarlos en su propia base de datos y luego ya utilizarlos desde allí (Debe almacenar solo los datos necesarios para la ruta principal)
+  - Obtener un listado de los primeros 10 países
+- [ ] __GET /countries/{idPais}__:
+  - Obtener el detalle de un país en particular
+  - Debe traer solo los datos pedidos en la ruta de detalle de país
+  - Incluir los datos de las actividades turísticas correspondientes
+- [ ] __GET /countries?name="..."__:
+  - Obtener los países que coincidan con el nombre pasado como query parameter (No necesariamente tiene que ser una matcheo exacto)
+  - Si no existe ningún país mostrar un mensaje adecuado
+- [ ] __POST /activity__:
+  - Recibe los datos recolectados desde el formulario controlado de la ruta de creación de actividad turística por body
+  - Crea una actividad turística en la base de datos
 
 
 #### Testing
