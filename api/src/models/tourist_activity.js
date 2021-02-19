@@ -10,10 +10,10 @@ module.exports = (sequelize) => {
       type: D.INTEGER,
     },
     duration: {
-      type: D.INTEGER,
+      type: D.STRING,
     },
     season: {
-      type: D.ENUM('verano','otoño','invierno','primavera'),
+      type: D.ENUM('verano','otoño','invierno','primavera','todas'),
     }
   },{
     timestamps: false

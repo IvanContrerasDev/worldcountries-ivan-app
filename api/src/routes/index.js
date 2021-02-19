@@ -6,6 +6,6 @@ const activity = require('./activity.js');
 
 
 router.use('/countries',countries);
-router.use('activity',activity);
+router.use('/activity',activity);
 
 module.exports = router;
