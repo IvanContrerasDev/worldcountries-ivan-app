@@ -1,6 +1,13 @@
 .App {
   text-align: center;
 }
+/* .principal{
+  height: 40rem;
+  width: 100%;
+  background-image: url('https://restcountries.eu/data/arg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
 
 .App-logo {
   height: 40vmin;
