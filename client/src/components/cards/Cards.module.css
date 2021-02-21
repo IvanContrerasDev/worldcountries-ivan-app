@@ -1,0 +1,16 @@
+.cardscontainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5rem;
+}
+
+.page{
+    color: #2f131e;
+    border-radius: 15%;
+    width: 5rem;
+    height: 3rem;
+    font-size: x-large;
+    background-color: #87F5FB;
+    
+}

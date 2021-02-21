@@ -1,9 +1,12 @@
 .navbar {
-    background-color: rgb(82, 82, 235);
+    position: fixed;
+    width: 100%;
+    background-color: #87F5FB/*rgb(82, 82, 235)*/;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     color: white;
     font-size: xx-large;
     height: 4rem;
+    color: #271818;
 }

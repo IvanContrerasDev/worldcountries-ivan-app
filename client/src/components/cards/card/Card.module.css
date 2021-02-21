@@ -1,0 +1,59 @@
+.cardcontainer {
+	border: 2.5px solid #c4fdff;
+	background-color: #e4feffbd;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	width: 20rem;
+	height: 11.5rem;
+	margin: 3rem;
+	padding: 0 0.7rem;
+	text-decoration: none;
+}
+
+.cardcontainer:hover {
+	background-color: #c4fdffbe;
+}
+
+.name {
+	font-size: xx-large;
+	font-style: italic;
+	color: #2f131e;
+	text-decoration: underline double #481620;
+}
+
+.region {
+	font-size: xx-large;
+	margin-top: 4%;
+	color: black;
+}
+
+.abajo {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+.imgcard {
+	width: 8rem;
+	height: 5rem;
+	border-radius: 15px;
+}
+
+
+/* background-image: linear-gradient(
+	to top,
+	rgb(71, 255, 249),
+	rgb(69, 234, 226),
+	rgb(68, 212, 204),
+	rgb(66, 191, 181),
+	rgb(65, 170, 159),
+	rgb(63, 148, 136),
+	rgb(62, 127, 114),
+	rgb(60, 105, 91),
+	rgb(59, 84, 69),
+	rgb(57, 63, 46),
+	rgb(56, 41, 24),
+	rgb(54, 20, 1)
+); */
+/* background-image: linear-gradient(to top, rgb(138, 255, 251), rgb(130, 234, 228), rgb(123, 212, 206), rgb(115, 191, 183), rgb(107, 170, 160), rgb(100, 148, 137), rgb(92, 127, 115), rgb(85, 105, 92), rgb(77, 84, 69), rgb(69, 63, 46), rgb(62, 41, 24), rgb(54, 20, 1)); */

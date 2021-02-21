@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 
-const { Country } = require("../db.js");
+const { Country, Tourist_activity } = require("../db.js");
 
 const { Op } = require("sequelize");
 
@@ -12,11 +12,12 @@ const checkerhandler = (toCheck, res) => {
 
 router.get("/", async (req, res) => {
 	try {
+		const {offset = 0} = req.body;
 		const { name } = req.query;
 		let paises;
 		if (!name) {
 			//si no hay query se buscan los primeros 10
-			paises = await Country.findAll({ offset: 0, limit: 10 });
+			paises = await Country.findAll({ offset, limit: 10 });
 		} else {
 			// si hay query params, se busca por tal
 			paises = await Country.findAll({
@@ -33,7 +34,7 @@ router.get("/", async (req, res) => {
 router.get("/:idPais", async (req, res) => {
 	//se busca un pais en especifico por id
 	const { idPais } = req.params;
-	const unPais = await Country.findOne({ where: { id: idPais } });
+	const unPais = await Country.findByPk(idPais,{ include:  Tourist_activity  });
     // checkeamos si se encontro algo 
     return checkerhandler(unPais,res);
 });

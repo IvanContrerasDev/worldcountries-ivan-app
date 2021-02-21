@@ -5,13 +5,13 @@ import './Navbar.css';
 
 export function Navbar() {
   return (
-    <div>
-      <nav className='navbar'>
-        <Route exact path='/'>
-            Welcome to the Country App
-        </Route>
-        
-      </nav>
+    <div className='navbar'>
+      <div>
+        dafne
+      </div>
+      <div>
+        te amo
+      </div>
     </div>
   )
 };

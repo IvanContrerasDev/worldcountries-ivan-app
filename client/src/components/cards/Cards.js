@@ -1,14 +1,21 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import OneCard from './card/Card.js';
-import './Cards.css';
+import styles from './Cards.module.css';
 
 function Cards() {
     return(
-        <div>
+        <div className={styles.cardscontainer}>
             <OneCard /> 
-            <button>Anterior</button>
-            <button>Siguiente</button>
+            <OneCard /> 
+            <OneCard /> 
+            <OneCard /> 
+            <OneCard /> 
+            <OneCard /> 
+            <OneCard /> 
+            <OneCard /> 
+            <OneCard /> 
+            <button className={styles.page}>{'<'}</button>
+            <button className={styles.page}>{'>'}</button>
         </div>
     )
 };

@@ -2,7 +2,7 @@ const server = require("./src/app.js");
 
 const { default: axios } = require("axios");
 
-const { conn, Country, Tourist_activity } = require("./src/db.js");
+const { conn, Country, Tourist_activity, country_activity } = require("./src/db.js");
 
 //Syncing all the models at once.
 conn
@@ -36,6 +36,30 @@ conn
 	})
 	.then(() => {
 		console.log("Paises Creados");
+		return Tourist_activity.bulkCreate(
+			[{
+			name: 'Trekking',
+			difficulty: 5,
+			duration: 'de una a 6 horas',
+			season: 'verano'
+			},
+			{
+				name: 'Sky',
+				difficulty: 5,
+				duration: 'dos horas',
+				season: 'invierno'
+			}]
+		)
+	})
+	.then(() => {
+		console.log("Actividades creadas");
+		return country_activity.create({
+			countryId: 11,
+			touristActivityId:1
+		})
+	})
+	.then(() => {
+		console.log("Match creado");
 	})
 	.catch((error) => {
 		console.log("cant create country for reason:", error);

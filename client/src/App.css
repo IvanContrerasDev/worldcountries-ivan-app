@@ -1,13 +1,12 @@
 .App {
+  /* position: fixed ; */
   text-align: center;
-}
-/* .principal{
-  height: 40rem;
-  width: 100%;
-  background-image: url('https://restcountries.eu/data/arg.svg');
+  background-image: url('https://www.zouros.gr/wp-content/uploads/2016/10/world-map-background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-} */
+  height: 71rem;
+  background-position: center;
+}
 
 .App-logo {
   height: 40vmin;
