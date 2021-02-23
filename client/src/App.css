@@ -1,11 +1,11 @@
 .App {
-  /* position: fixed ; */
   text-align: center;
   background-image: url('https://www.zouros.gr/wp-content/uploads/2016/10/world-map-background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 71rem;
-  background-position: center;
+  background-position-x: center;
+  background-position: fixed;
+  height: auto;
 }
 
 .App-logo {

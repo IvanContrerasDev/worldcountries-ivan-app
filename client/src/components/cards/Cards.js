@@ -4,18 +4,22 @@ import styles from './Cards.module.css';
 
 function Cards() {
     return(
-        <div className={styles.cardscontainer}>
-            <OneCard /> 
-            <OneCard /> 
-            <OneCard /> 
-            <OneCard /> 
-            <OneCard /> 
-            <OneCard /> 
-            <OneCard /> 
-            <OneCard /> 
-            <OneCard /> 
-            <button className={styles.page}>{'<'}</button>
-            <button className={styles.page}>{'>'}</button>
+        <div className={styles.container}>
+            <div className={styles.cardscontainer}>
+                <OneCard /> 
+                <OneCard /> 
+                <OneCard /> 
+                <OneCard /> 
+                <OneCard /> 
+                <OneCard /> 
+                <OneCard /> 
+                <OneCard /> 
+                <OneCard /> 
+            </div>
+            <div className={styles.btnpages}>
+                <button className={styles.page}>{'❮'}</button>
+                <button className={styles.page}>{'❯'}</button>
+            </div>
         </div>
     )
 };
