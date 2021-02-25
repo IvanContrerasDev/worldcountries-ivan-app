@@ -1,18 +1,19 @@
 .cardcontainer {
-	border: 2.5px solid #c4fdff;
-	background-color: #e4feffbd;
+	border: 2.5px solid #f8f3c0;
+	background-color: #f8f3c0a4;
 	border-radius: 20px;
 	display: flex;
 	flex-direction: column;
 	width: 20rem;
-	height: 11.5rem;
+	min-height: 11.5rem;
+	height: auto;
 	margin: 1rem;
 	padding: 0 0.7rem;
 	text-decoration: none;
 }
 
 .cardcontainer:hover {
-	background-color: #c4fdffbe;
+	background-color: #f8f3c0c0;
 }
 
 .name {

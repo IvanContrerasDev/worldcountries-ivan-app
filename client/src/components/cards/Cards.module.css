@@ -6,7 +6,7 @@
 }
 .container{
     padding: 3rem;
-    padding-top: 5rem;
+    padding-top: 6rem;
     display: flex;
     flex-direction: column;
 }
@@ -23,5 +23,5 @@
     width: 5rem;
     height: 3rem;
     font-size: x-large;
-    background-color: #87F5FB; 
+    background-color: #f8f3c0; 
 }

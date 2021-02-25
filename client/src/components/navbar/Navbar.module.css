@@ -6,15 +6,29 @@
     height: 3.7rem;
     width: 100%;
     font-size: x-large;
-    background-color: #87F5FB;
+    background-color: #f8f3c0;
     color: white;
     color: #271818;
+}
+/*c0f5f8*/
+.right{
+    display: flex;
+}
+.btns{
+    display: flex;
+    margin-right: 7rem;
+    margin-left: 1rem;
+}
+.btns button{
+    background-color: #f8f3c0;
+    color: black;
+    font-size: large;
+    margin: 0 0.5rem;
+    border: none;
 }
 .search{
     height: 2.3rem;
     width: 17rem;
-    margin-top: ;
-    margin-right: 10rem;
     border-radius: 0.5rem;
     border: 2px solid #481620;
 }
@@ -29,7 +43,7 @@ ul {
     margin-left: 100px;
     padding: 0;
     overflow: hidden;
-    background-color:#87F5FB;
+    background-color:#f8f3c0;
 }
 
 li {

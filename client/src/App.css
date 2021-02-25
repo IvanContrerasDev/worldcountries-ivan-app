@@ -5,6 +5,7 @@
   background-size: cover;
   background-position-x: center;
   background-position: fixed;
+  min-height: 60rem;
   height: auto;
 }
 
