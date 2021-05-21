@@ -51,7 +51,7 @@ conn
 			}]
 		)
 	})
-	.then(() => {
+	.then((res) => {
 		console.log("Actividades creadas");
 		return country_activity.create({
 			countryId: 11,

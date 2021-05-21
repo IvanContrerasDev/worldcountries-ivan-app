@@ -13,7 +13,7 @@ module.exports = (sequelize) => {
       type: D.STRING,
     },
     season: {
-      type: D.ENUM('verano','otoño','invierno','primavera','todas'),
+      type: D.ENUM('verano','otoño','invierno','primavera','all'),
     }
   },{
     timestamps: false

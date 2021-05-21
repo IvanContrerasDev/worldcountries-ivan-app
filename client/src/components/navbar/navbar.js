@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { orderAZ, prev, next, orderZA, poblacionAS, poblacionDS, buscador } from "../../actions";
+import { Link } from 'react-router-dom';
+import { orderAZ, prev, next, orderZA, poblacionAS, poblacionDS, buscador, filtradoContinente } from "../../actions";
 import styles from "./Navbar.module.css";
 
 export function Navbar(props) {
@@ -13,11 +14,11 @@ export function Navbar(props) {
 				<li className={styles.dropdown}>
 					<span className={styles.dropbtn}>Filter</span>
 					<div className={styles.dropdown_content}>
-						<span>{"European Continent"}</span>
-						<span>{"American Continent"}</span>
-						<span>{"Oceanic Continent"}</span>
-						<span>{"African Continent"}</span>
-						<span>{"Asian Continent"}</span>
+						<Link to='/home/filter'> <span onClick={ () => props.filtradoPorRegion('Europe') } >{"European Continent"}</span> </Link>
+						<Link to='/home/filter'> <span onClick={ () => props.filtradoPorRegion('Americas') } >{"American Continent"}</span> </Link>
+						<Link to='/home/filter'> <span onClick={ () => props.filtradoPorRegion('Oceania') } >{"Oceanic Continent"}</span> </Link>
+						<Link to='/home/filter'> <span onClick={ () => props.filtradoPorRegion('Africa') } >{"African Continent"}</span> </Link>
+						<Link to='/home/filter'> <span onClick={ () => props.filtradoPorRegion('Asia') }>{"Asian Continent"}</span> </Link>
 					</div>
 				</li>
 				<li className={styles.dropdown}>
@@ -66,6 +67,7 @@ const mapDispatchToProps = (dispatch) => {
 		ordenarPobAS: () => dispatch( poblacionAS() ),
 		ordenarPobDS: () => dispatch( poblacionDS() ),
 		buscarPais: (info) => dispatch( buscador(info) ),
+		filtradoPorRegion: (continente) => dispatch( filtradoContinente(continente) ),
 		siguiente: (orden) => dispatch(next(orden)),
         anterior: (orden) => dispatch(prev(orden))
 	}

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import {Link} from 'react-router-dom';
 import { connect } from "react-redux";
 import { getData } from "../../actions";
 import styles from "./infoPais.module.css";
@@ -12,32 +13,41 @@ function InfoPais(props) {
         // eslint-disable-next-line
     },[])
 	return (
-        <div className={styles.container}>
-			<div>
-				<h1> Name: {name} </h1>
-				<h3> Capital: {capital} </h3>
-                <h4> Region: {region} </h4>
-                <h4> Subregion: {subregion} </h4>
-                <h4> Area: {area} </h4>
-                <h4> Population: {population} </h4>
+        <div className={styles.page}>
+            <div className={styles.container}>
+                <h1> {name && name.toUpperCase()} </h1>
+                <div className={styles.box0}>
+                    <div className={styles.box1}>
+                        <h2> CAPITAL: {capital} </h2>
+                        <h3> REGION: {region} </h3>
+                        <h3> SUBREGION: {subregion} </h3>
+                        <h3> AREA:  { new Intl.NumberFormat("de-DE").format(area)} km² </h3>
+                        <h3> POPULATION:  {new Intl.NumberFormat("de-DE").format(population)} </h3>
+                    </div>
+                    <img className={styles.imagen} src={flag} alt={`${name} country flag`} />
+                </div>            
                 { tourist_activities && 
-                    <div>
-                        <h4> Tourist Activities: </h4>
+                    <div className={styles.box2}>
+                        <h2> TOURIST ACTIVITIES </h2>
                         {tourist_activities.map( cont => {
                             return(
-                                <div>
-                                    <h4>name: {cont.name}</h4>
-                                    <h4>season: {cont.season}</h4>
-                                    <h4>duration: {cont.duration}</h4>
-                                    <h4>difficulty: {cont.difficulty}</h4>
+                                <div className={styles.box3}>
+                                    <div>
+                                        <h3>Name: {cont.name}</h3>
+                                        <h3>Season: {cont.season}</h3>
+                                    </div>
+                                    <div>
+                                        <h3>Duration: {cont.duration}</h3>
+                                        <h3>Difficulty: {cont.difficulty}</h3>
+                                    </div>
                                 </div>
                             )
                         })}
                     </div>
                 }
-		    </div>
-            <div> <img src={flag} alt={`${name} country flag`} /> </div>
-		</div>
+                <Link to={`/home/country/${idPais}/addActivity`}><button className={styles.btn}>Add Tourist Activity</button></Link>
+            </div>
+        </div>
 	);
 }
 

@@ -101,6 +101,12 @@ export const buscador = (PaisBuscado) => {
     }
 };
 
+export const filtradoContinente = (continente) => {
+	return {
+		type: 'FILTRADO_CONTINENTE', payload: continente
+	}
+};
+
 export const next = (orden) => {
 	switch (orden) {
 		case "A_to_Z":
