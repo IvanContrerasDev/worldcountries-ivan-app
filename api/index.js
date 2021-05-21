@@ -6,7 +6,7 @@ const { conn, Country, Tourist_activity, country_activity } = require("./src/db.
 
 //Syncing all the models at once.
 conn
-	.sync({ force: true })
+	.sync({ force: false })
 	.then(() => {
 		//levantar servidor
 		server.listen(process.env.PORT, (err) => {
