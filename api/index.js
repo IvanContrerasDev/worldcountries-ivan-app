@@ -9,11 +9,11 @@ conn
 	.sync({ force: true })
 	.then(() => {
 		//levantar servidor
-		server.listen(4001, (err) => {
+		server.listen(process.env.PORT, (err) => {
 			if (err) {
 				console.log(err);
 			} else {
-				console.log("%s listening at 4001");
+				console.log("%s listening at " + process.env.PORT);
 			}
 		});
 		//llamamos y tomamos datos necesarios de la api externa para guardarlos en nuestra db
