@@ -1,11 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+button{
+  outline: none;
+  border: none;
+}
 .App {
   text-align: center;
-  background-image: url('https://www.zouros.gr/wp-content/uploads/2016/10/world-map-background.jpg');
-  background-repeat: no-repeat;
+  background-image: url('../src/assets/images/pexels-pixabay-220201.jpg');
   background-size: cover;
-  background-position-x: center;
-  background-position: fixed;
-  min-height: 60rem;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%; 
+  min-height: 100vh;
   height: auto;
 }
 
